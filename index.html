@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Roteirizador Salvador</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🚚 Roteirizador Moura Entulhos</h1>
+    <p>Otimização de rotas para entregas</p>
+</header>
+
+
+<main>
+
+    <section class="painel">
+
+        <h2>📍 Planejar rota</h2>
+
+
+        <!-- ORIGEM -->
+
+        <label>Local de saída</label>
+
+        <input
+            type="text"
+            id="origem"
+            placeholder="Ex: Jardim Santo Inácio, Salvador"
+        >
+
+
+        <!-- JORNADA -->
+
+        <h3>🚚 Jornada</h3>
+
+        <div class="jornada">
+
+            <div>
+                <label>Saída</label>
+
+                <input
+                    type="time"
+                    id="inicioJornada"
+                    value="06:00"
+                >
+            </div>
+
+            <div>
+                <label>Final</label>
+
+                <input
+                    type="time"
+                    id="fimJornada"
+                    value="16:00"
+                >
+            </div>
+
+        </div>
+
+
+        <!-- ENTREGAS -->
+
+        <h3>📦 Entregas</h3>
+
+        <div id="entregas">
+
+            <div class="entrega">
+
+                <div class="numero">
+                    1
+                </div>
+
+                <div class="dados">
+
+                    <label>
+                        Endereço
+                    </label>
+
+                    <input
+                        type="text"
+                        class="endereco"
+                        placeholder="Ex: Acupe, Salvador"
+                    >
+
+
+                    <div class="checkbox-horario">
+
+                        <input
+                            type="checkbox"
+                            class="temHorario"
+                        >
+
+                        <span>
+                            Cliente tem horário marcado
+                        </span>
+
+                    </div>
+
+
+                    <div class="campo-horario">
+
+                        <label>
+                            Horário marcado
+                        </label>
+
+                        <input
+                            type="time"
+                            class="horario"
+                            value="07:00"
+                            disabled
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="adicionar"
+            class="btn-adicionar"
+        >
+            ➕ Adicionar entrega
+        </button>
+
+
+        <button
+            id="calcular"
+            class="btn-calcular"
+        >
+            🚚 CALCULAR MELHOR ROTA
+        </button>
+
+
+        <div id="resultado"></div>
+
+    </section>
+
+
+    <!-- MAPA -->
+
+    <section class="mapa-container">
+
+        <div id="mapa"></div>
+
+    </section>
+
+</main>
+
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
